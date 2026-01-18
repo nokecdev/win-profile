@@ -36,10 +36,10 @@ function nokecdev {
         # RESTART
         # -----------------------------
         "restart" {
-            if (-not $services -or $services -contains "all") {
+            if (-not $Services -or $Services -contains "all") {
                 docker compose -f $composeFile up -d
             } else {
-                docker compose -f $composeFile up -d --build @services
+                docker compose -f $composeFile up -d --build @($Services)
             }
         }
 
